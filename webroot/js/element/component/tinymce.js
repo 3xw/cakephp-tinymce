@@ -2,24 +2,27 @@
 
   Vue.component('tinymce', {
     template: '#tinymce',
-    data: function(){
-      return {
+    props: {
+      id: String,
+      init: {
+        type: Object,
+        default: function(){return{}}
       }
     },
-    props: {
-
-    },
-    created: function()
+    computed:
     {
-
+      cInit: function()
+      {
+        return Object.assign({
+          selector: '#'+this.id,
+          'theme_url': this.$root.$el.dataset.webroot + 'trois/tinymce/js/tinymce/themes/modern/theme.js',
+          'skin_url': this.$root.$el.dataset.webroot + 'trois/tinymce/js/tinymce/skins/lightgray/'
+        }, this.init)
+      }
     },
-    mounted: function() {
-      scope.tinymce.baseUrl = 'http://localhost:8888/prometerre/prometerre.ch/trois/tinymce/js/tinymce/'
-      scope.tinymce.init({
-        selector: '#mytextarea',
-        theme_url: 'http://localhost:8888/prometerre/prometerre.ch/trois/tinymce/js/tinymce/themes/modern/theme.js',
-        skin_url: 'http://localhost:8888/prometerre/prometerre.ch/trois/tinymce/js/tinymce/skins/lightgray/',
-      })
+    mounted: function()
+    {
+      scope.tinymce.init(this.cInit)
     },
     methods: {
 

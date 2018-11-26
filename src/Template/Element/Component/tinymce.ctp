@@ -1,8 +1,6 @@
 <!-- tinymce -->
 <script type="text/x-template" id="tinymce">
-  <div>
-    <textarea id="mytextarea">
-      <slot></slot>
-    </textarea>
+  <div :id="id" class="no-trumbowyg">
+    <slot/>
   </div>
 </script>
