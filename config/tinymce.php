@@ -1,5 +1,24 @@
 <?php
 return [
-  'theme_url'=> 'themes/modern/theme.js',
-  'skin_url'=> 'skins/lightgray/'
-]
+  'Trois/Tinymce'  => [
+    'height' => '500',
+    'language' => 'fr_FR',
+    'language_url' => 'https://static.3xw.ch/tinymce/lang/fr_FR.js',
+    'menubar' => false,
+    //'plugins' => ['advlist autolink lists link charmap print preview searchreplace visualblocks code fullscreen emoticons insertdatetime table contextmenu paste help wordcount'],
+    'toolbar'  => 'insert | undo redo | formatselect | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist | emoticons | code | removeformat ',
+    'block_formats' => 'Paragraphe=p;Titre 1=h1;Titre 2=h2;Titre 3=h3',
+    'formats' => [
+      'bold' => ['inline'  => 'strong'],
+      'italic' => ['inline'  => 'em'],
+      'underline' => ['inline'  => 'u'],
+      'strikethrough' => ['inline'  => 'del'],
+      'lead' => ['block'  => 'p', 'classes'  => 'lead'],
+    ],
+    'valid_elements' => '*[style],p,strong,em,i,u,del,a[href|target],ul,ol,li,table,th,td,tr',
+    'valid_styles' => ['*' => 'text-align,color'],
+    'powerpaste_word_import' => 'clean',
+    'powerpaste_html_import' => 'clean',
+    //'content_css' => []
+  ]
+];

@@ -9,7 +9,7 @@ $this->Html->script([
 ],['block' => true]);
 
 // data
-//$init = array_merge(Configure::read('Trois/Tinymce.init'), isset($init)?:[]);
+$init = array_merge(Configure::read('Trois/Tinymce'), isset($init)? $init:[]);
 ?>
 
 <!-- sidebar baby -->

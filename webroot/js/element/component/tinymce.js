@@ -22,6 +22,7 @@
     },
     mounted: function()
     {
+      scope.tinymce.baseURL = this.$root.$el.dataset.webroot + 'trois/tinymce/js/tinymce/'
       scope.tinymce.init(this.cInit)
     },
     methods: {
