@@ -5,7 +5,7 @@ return [
     'language' => 'fr_FR',
     'language_url' => 'https://static.3xw.ch/tinymce/lang/fr_FR.js',
     'menubar' => false,
-    //'plugins' => ['advlist autolink lists link charmap print preview searchreplace visualblocks code fullscreen emoticons insertdatetime table contextmenu paste help wordcount'],
+    'plugins' => ['advlist autolink lists link charmap print preview searchreplace visualblocks code fullscreen emoticons insertdatetime table contextmenu paste  code help wordcount'],
     'toolbar'  => 'insert | undo redo | formatselect | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist | emoticons | code | removeformat ',
     'block_formats' => 'Paragraphe=p;Titre 1=h1;Titre 2=h2;Titre 3=h3',
     'formats' => [
@@ -15,10 +15,8 @@ return [
       'strikethrough' => ['inline'  => 'del'],
       'lead' => ['block'  => 'p', 'classes'  => 'lead'],
     ],
-    'valid_elements' => '*[style],p,strong,em,i,u,del,a[href|target],ul,ol,li,table,th,td,tr',
+    'valid_elements' => '*[style],p[style],strong,em,i,u,del,a[href|target],ul,ol,li[style],table,th,td[style],tr,img[src|style|class|alt|width|height]',
     'valid_styles' => ['*' => 'text-align,color'],
-    'powerpaste_word_import' => 'clean',
-    'powerpaste_html_import' => 'clean',
-    //'content_css' => []
+    'content_css' => []
   ]
 ];

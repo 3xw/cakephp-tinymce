@@ -13,6 +13,6 @@ $init = array_merge(Configure::read('Trois/Tinymce'), isset($init)? $init:[]);
 ?>
 
 <!-- sidebar baby -->
-<tinymce id="<?= $field ?>" :init="<?= isset($init)? htmlspecialchars(json_encode($init, JSON_FORCE_OBJECT), ENT_QUOTES, 'UTF-8'):'{}' ?>" >
+<tinymce id="<?= $field ?>" :init="<?= isset($init)? htmlspecialchars(json_encode($init), ENT_QUOTES, 'UTF-8'):'{}' ?>" >
   <?= isset($value)? $value: '' ?>
 </tinymce>
