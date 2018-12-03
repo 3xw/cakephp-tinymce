@@ -4,6 +4,7 @@
     template: '#tinymce',
     props: {
       id: String,
+      aid: String,
       init: {
         type: Object,
         default: function(){return{}}
@@ -18,8 +19,13 @@
           'theme_url': this.$root.$el.dataset.webroot + 'trois/tinymce/js/tinymce/themes/modern/theme.js',
           'skin_url': this.$root.$el.dataset.webroot + 'trois/tinymce/js/tinymce/skins/lightgray/',
           'paste_enable_default_filters': true,
-          'paste_preprocess': this.pastePreprocess
+          'paste_preprocess': this.pastePreprocess,
         }, this.init)
+      }
+    },
+    created: function(){
+      if(window.aEventHub[this.aid] == undefined){
+        window.aEventHub[this.aid] = new Vue();
       }
     },
     mounted: function()
@@ -41,7 +47,7 @@
           return match;
         });
         args.content = args.content.replace(/<(div|style|meta|link|pclass|span|svg|path|pre|code).*?>/gi, '');
-      }
+      },
     }
   });
 
