@@ -9,6 +9,11 @@
         default: function(){return{}}
       }
     },
+    created: function()
+    {
+      if(!scope.vueTinymce) scope.vueTinymce = {}
+      scope.vueTinymce[this.id] = this
+    },
     computed:
     {
       cInit: function()
