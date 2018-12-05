@@ -23,7 +23,8 @@
           'theme_url': this.$root.$el.dataset.webroot + 'trois/tinymce/js/tinymce/themes/modern/theme.js',
           'skin_url': this.$root.$el.dataset.webroot + 'trois/tinymce/js/tinymce/skins/lightgray/',
           'paste_enable_default_filters': true,
-          'paste_preprocess': this.pastePreprocess
+          'paste_preprocess': this.pastePreprocess,
+          'relative_urls': false
         }, this.init)
       }
     },
