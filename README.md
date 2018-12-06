@@ -44,3 +44,14 @@ With your own configuration, create file config/tinymce.php ex:
 	    'content_css' => []
 	  ]
 	];
+	
+## Usage
+In your view files:
+
+	echo $this->element('Trois/Tinymce.tinymce',[
+	  'field' => 'content',
+	  'value' => $post->content,
+	  'init' => [ // optional
+	    'some_settings' => 'coucou',
+	    'toolbar'  => 'code | removeformat ', // override settings and add only code & removeformat
+	]);
