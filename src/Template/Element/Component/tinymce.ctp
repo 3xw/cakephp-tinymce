@@ -1,7 +1,8 @@
 <!-- tinymce -->
 <script type="text/x-template" id="tinymce">
-  <div>
-    <div :id="id" class="no-trumbowyg">
+  <div class="input form-group textarea">
+    <label>{{init.label}}</label>
+    <div :id="id" :class="init.class">
       <slot/>
     </div>
   </div>

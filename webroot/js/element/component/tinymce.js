@@ -6,6 +6,8 @@
       id: String,
       init: {
         type: Object,
+        label: String,
+        class: String,
         default: function(){return{}}
       }
     },
