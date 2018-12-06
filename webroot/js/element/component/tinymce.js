@@ -1,5 +1,12 @@
 (function(scope, Vue){
 
+  //window helper
+  scope.slug = function(str)
+  {
+    return str.replace(/\./gi, '_')
+  }
+
+  // Vue component
   Vue.component('tinymce', {
     template: '#tinymce',
     props: {
@@ -18,6 +25,10 @@
     },
     computed:
     {
+      slug: function()
+      {
+          return scope.slug(this.id)
+      },
       cInit: function()
       {
         return Object.assign({
