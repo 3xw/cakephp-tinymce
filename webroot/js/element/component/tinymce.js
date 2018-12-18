@@ -3,7 +3,7 @@
   //window helper
   scope.slug = function(str)
   {
-    return str.replace(/\./gi, '_')
+    return str.replace(/\./gi, '')
   }
 
   // Vue component
@@ -32,7 +32,7 @@
       cInit: function()
       {
         return Object.assign({
-          'selector': '#'+this.id,
+          'selector': '#'+scope.slug(this.id),
           'theme_url': this.$root.$el.dataset.webroot + 'trois/tinymce/js/tinymce/themes/modern/theme.js',
           'skin_url': this.$root.$el.dataset.webroot + 'trois/tinymce/js/tinymce/skins/lightgray/',
           'paste_enable_default_filters': true,
