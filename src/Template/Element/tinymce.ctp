@@ -10,6 +10,9 @@ $this->Html->script([
 
 // data
 $init = array_merge(Configure::read('Trois/Tinymce'), isset($init)? $init:[]);
+if(!empty($init['content_css'])){
+  $init['content_css'][0] = $this->Url->build('/css/', true).$init['content_css'][0];
+}
 ?>
 
 <!-- sidebar baby -->
