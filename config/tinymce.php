@@ -1,7 +1,7 @@
 <?php
 return [
   'Trois/Tinymce'  => [
-    'height' => '500',
+    'height' => 500,
     'language' => 'fr_FR',
     'language_url' => 'https://static.3xw.ch/tinymce/lang/fr_FR.js',
     'menubar' => false,
@@ -17,6 +17,10 @@ return [
     ],
     'valid_elements' => '*[style],p[style],strong,em,i,u,del,a[href|target],ul,ol,li[style],table,th,td[style],tr,img[src|style|class|alt|width|height]',
     'valid_styles' => ['*' => 'text-align,color'],
-    'content_css' => []
+    'content_css' => [],
+    'theme' => 'silver',
+    'mobile' => [
+      'theme' => 'silver',
+    ]
   ]
 ];

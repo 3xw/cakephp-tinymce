@@ -47,7 +47,7 @@
         var field = this.name;
         return Object.assign({
           'selector': '#'+scope.slug(this.id),
-          'theme_url': this.$root.$el.dataset.webroot + 'trois/tinymce/js/tinymce/themes/silver/theme.min.js',
+          //'theme_url': this.$root.$el.dataset.webroot + 'trois/tinymce/js/tinymce/themes/mobile/theme.min.js',
           //'skin_url': this.$root.$el.dataset.webroot + 'trois/tinymce/js/tinymce/skins/',
           'paste_enable_default_filters': true,
           'paste_preprocess': this.pastePreprocess,

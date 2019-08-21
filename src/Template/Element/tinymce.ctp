@@ -4,7 +4,7 @@ use Cake\Core\Configure;
 // dependencies
 $this->append('template', $this->element('Trois/Tinymce.Component/tinymce'));
 $this->Html->script([
-  '../trois/tinymce/js/tinymce/tinymce.5.min.js?v='.md5_file(ROOT.'/vendor/3xw/cakephp-tinymce/webroot/js/tinymce/tinymce.5.min.js'),
+  '../trois/tinymce/js/tinymce/tinymce.5.1.min.js?v='.md5_file(ROOT.'/vendor/3xw/cakephp-tinymce/webroot/js/tinymce/tinymce.5.1.min.js'),
   '../trois/tinymce/js/element/component/tinymce.js?v='.md5_file(ROOT.'/vendor/3xw/cakephp-tinymce/webroot/js/element/component/tinymce.js')
 ],['block' => true]);
 
