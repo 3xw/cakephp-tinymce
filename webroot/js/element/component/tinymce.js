@@ -58,6 +58,8 @@
           'paste_enable_default_filters': true,
           'paste_preprocess': this.pastePreprocess,
           'relative_urls': false,
+          'remove_script_host' : false,
+          'convert_urls' : true,
           'setup':  function(editor) {
             editor.on('submit', function(e) {
               e.preventDefault();
