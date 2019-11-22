@@ -18,6 +18,12 @@
         default: function(){return{}}
       }
     },
+    data()
+    {
+      return {
+        version: '3.7.1.2'
+      }
+    },
     created: function()
     {
       if(!scope.vueTinymce) scope.vueTinymce = {}
