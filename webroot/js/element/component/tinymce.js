@@ -18,10 +18,10 @@
         default: function(){return{}}
       }
     },
-    data()
+    data: function()
     {
       return {
-        version: '3.7.1.2'
+        version: '3.7.1.3'
       }
     },
     created: function()
