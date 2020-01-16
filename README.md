@@ -1,5 +1,5 @@
-# cakephp-tinymce plugin for CakePHP
-Tinymce 4 cakephp
+# cakephp-tinymce plugin for CakePHP 4.x
+Tinymce 4 for cakephp 4.x
 
 ## Installation
 
@@ -8,21 +8,21 @@ You can install this plugin into your CakePHP application using [composer](http:
 The recommended way to install composer packages is:
 
 	composer require 3xw/cakephp-tinymce
-	
-In your src/Application.php file 
+
+In your src/Application.php file
 
 	$this->addPlugin(\Trois\Tinymce\Plugin::class, ['boostrap' => true]);
 
 ## Configuration
 At the end of config/boostrap file
-	
+
 	Configure::write('Trois/Tinymce.config', ['tinymce']);
-	
+
 With your own configuration, create file config/tinymce.php ex:
 
 	<?php
 	use Cake\Routing\Router;
-	
+
 	return [
 	  'Trois/Tinymce'  => [
 	    'height' => '500',
@@ -44,7 +44,7 @@ With your own configuration, create file config/tinymce.php ex:
 	    'content_css' => []
 	  ]
 	];
-	
+
 ## Usage
 In your view files:
 
