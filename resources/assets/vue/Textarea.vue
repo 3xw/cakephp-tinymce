@@ -30,6 +30,7 @@ export default
   },
   created()
   {
+    console.log(this);
     if(!window.vueTinymce) window.vueTinymce = {}
     window.vueTinymce[this.id] = this
   },
@@ -45,7 +46,7 @@ export default
       sections = this.id.split('.'),
       name = ''
 
-      for(i = 0;i < sections.length;i++)
+      for(let i = 0;i < sections.length;i++)
       {
         if(i > 0) name += '['+sections[i]+']'
         else name += sections[i];
@@ -75,7 +76,7 @@ export default
   },
   mounted()
   {
-    window.tinymce.baseURL = this.$root.$el.dataset.webroot + 'trois/tinymce/js/tinymce'
+    window.tinymce.baseURL = 'https://static.3xw.ch/tinymce'
     window.tinymce.suffix = '.min'
     window.tinymce.init(this.cInit)
 

@@ -1,5 +1,7 @@
 <template>
-  <component :is="componentInstance" v-bind="attributes" />
+  <div class="">
+    <component :is="componentInstance" v-bind="attributes" />
+  </div>
 </template>
 <script>
 export default {
@@ -30,7 +32,6 @@ export default {
         }
         else obj[i] = baseObj[i]
       }
-
       return obj
     }
   },

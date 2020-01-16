@@ -21,14 +21,16 @@ if(!empty($init['content_css']))
   $init['content_css'][0] = $this->Url->build('/css/', true).$init['content_css'][0];
 }
 
+$value = 'sgsgsgsg';
+
 echo $this->Html->tag(
   'tinymce-loader',
   isset($value)? $value: '',
   [
-    'name' => 'attachment-textarea',
+    'name' => 'tinymce-textarea',
     'props' => json_encode([
       'id' => $field,
-      ':int' => isset($init)? htmlspecialchars(json_encode($init), ENT_QUOTES, 'UTF-8'):'{}'
+      ':init' => isset($init)? $init:[]
     ])
   ]
 );
