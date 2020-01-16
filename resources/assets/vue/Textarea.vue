@@ -30,7 +30,6 @@ export default
   },
   created()
   {
-    console.log(this);
     if(!window.vueTinymce) window.vueTinymce = {}
     window.vueTinymce[this.id] = this
   },

@@ -1,13 +1,17 @@
 <template>
-  <div class="">
-    <component :is="componentInstance" v-bind="attributes" />
-  </div>
+  <component :is="componentInstance" v-bind="attributes" :slot="$slots[0]">
+    <slot/>
+  </component>
 </template>
 <script>
 export default {
   props: {
     name: { type: String, default: 'null' },
     props: { type: String }
+  },
+  created()
+  {
+    console.log(this)
   },
   computed:
   {
