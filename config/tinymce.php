@@ -3,7 +3,7 @@ return [
   'Trois/Tinymce'  => [
     'height' => 500,
     'language' => 'fr_FR',
-    'language_url' => 'https://static.3xw.ch/tinymce/lang/fr_FR.js',
+    'language_url' => 'https://static.3xw.ch/tinymce/5.1/lang/fr_FR.js',
     'menubar' => false,
     'plugins' => ['advlist autolink lists link charmap print preview searchreplace visualblocks code fullscreen emoticons insertdatetime table contextmenu paste  code help wordcount'],
     'toolbar'  => 'insert | undo redo | formatselect | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist | emoticons | code | removeformat ',

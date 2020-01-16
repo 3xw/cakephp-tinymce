@@ -75,7 +75,7 @@ export default
   },
   mounted()
   {
-    window.tinymce.baseURL = 'https://static.3xw.ch/tinymce'
+    window.tinymce.baseURL = 'https://static.3xw.ch/tinymce/5.1'
     window.tinymce.suffix = '.min'
     window.tinymce.init(this.cInit)
 
