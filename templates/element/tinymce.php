@@ -21,8 +21,6 @@ if(!empty($init['content_css']))
   $init['content_css'][0] = $this->Url->build('/css/', true).$init['content_css'][0];
 }
 
-$value = 'sgsgsgsg';
-
 echo $this->Html->tag(
   'tinymce-loader',
   isset($value)? $value: '',
