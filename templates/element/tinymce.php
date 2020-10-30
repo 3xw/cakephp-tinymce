@@ -4,8 +4,7 @@ use Cake\Core\Configure;
 // add script
 $this->Html->script(
   [
-    'plugins/tinymce/tinymce.vendor.min.js',
-    'plugins/tinymce/tinymce.min.js'
+    'tinymce/main.min.js'
   ],
   ['block' => true]
 );
