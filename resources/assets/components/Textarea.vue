@@ -1,4 +1,4 @@
-<template lang="html">
+<template lang="html" >
   <div class="input form-group textarea" :class="{required : init.required}">
     <label v-if="init.label">{{init.label}}</label>
     <div :id="name" :class="init.class">
@@ -13,7 +13,8 @@ export default
   name: 'tinymce-textarea',
   props: {
     field: String,
-    init: Object
+    init: Object,
+    entity:Object
   },
   data: ()=>({
     editor: null,
@@ -41,10 +42,6 @@ export default
     this.editor.destroy()
     delete window.vueTinymce[this.id]
   },
-  destroyed()
-  {
-
-  },
   computed:
   {
     name()
@@ -62,6 +59,7 @@ export default
   {
     update(e)
     {
+      if(this.entity) this.entity[this.field] = this.editor.getContent()
       window.tinymce.triggerSave()
       //console.log($('[name="'+this.name+'"]')[0].value);
     },
