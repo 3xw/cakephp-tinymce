@@ -1,33 +1,19 @@
-<?
+<?php
 use Cake\Core\Configure;
 
 // add script
-$this->Html->script(
-  [
-    'tinymce/main.min.js'
-  ],
-  ['block' => true]
-);
+$this->Html->script(['tinymce/main.min.js'],['block' => true]);
 
 // data
-$init = array_merge(
-  Configure::read('Trois/Tinymce'),
-  isset($init)? $init:[]
-);
+$init = array_merge(Configure::read('Trois/Tinymce'), isset($init)? $init:[]);
+if(!empty($init['content_css'])) $init['content_css'][0] = $this->Url->build('/css/', true).$init['content_css'][0];
 
-if(!empty($init['content_css']))
-{
-  $init['content_css'][0] = $this->Url->build('/css/', true).$init['content_css'][0];
-}
-
+// echo tag
 echo $this->Html->tag(
-  'tinymce-loader',
+  'tinymce-textarea',
   isset($value)? $value: '',
   [
-    'name' => 'tinymce-textarea',
-    'props' => json_encode([
-      'id' => $field,
-      ':init' => isset($init)? $init:[]
-    ])
+    'field' => $field,
+    ':init' => isset($init)? json_encode($init):[]
   ]
 );

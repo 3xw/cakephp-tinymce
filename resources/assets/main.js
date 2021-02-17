@@ -1,6 +1,12 @@
-import '@/vendor/js/tinymce/tinymce.5.1.min.js';
+// lib
+import '@/vendor/js/tinymce/tinymce.5.1.min.js'
+window.tinymce.baseURL = 'https://static.3xw.ch/tinymce/5.1'
+window.tinymce.suffix = '.min'
+
+//import ATTACHMENT 'resources/assets/plugins/tinymce.js';
 
 // init
-import TinymceLoader from '@/components/TinymceLoader.vue'
+import Textarea from '@/components/Textarea.vue'
 
-Vue.component('TinymceLoader', TinymceLoader)
+
+Vue.component(Textarea.name, Textarea)
