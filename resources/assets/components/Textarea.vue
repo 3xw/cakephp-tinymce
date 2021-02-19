@@ -18,6 +18,7 @@ export default
   },
   data: ()=>({
     editor: null,
+    plugins: [],
     config: {
       paste_enable_default_filters: true,
       relative_urls: false,
@@ -28,7 +29,7 @@ export default
   created()
   {
     // regsiter
-    window.vueTinymce[this.id] = this
+    window.vueTinymce[this.name] = this
   },
   mounted()
   {
@@ -40,7 +41,11 @@ export default
   beforeDestroy()
   {
     this.editor.destroy()
-    delete window.vueTinymce[this.id]
+    this.plugins.map(plugin => {
+      plugin.$destroy();
+      plugin.$el.parentNode.removeChild(plugin.$el);
+    })
+    delete window.vueTinymce[this.name]
   },
   computed:
   {
@@ -57,6 +62,11 @@ export default
   },
   methods:
   {
+    appendPlugin(plugin)
+    {
+      this.plugins.push(plugin)
+      this.$el.appendChild(plugin.$el)
+    },
     update(e)
     {
       if(this.entity) this.entity[this.field] = this.editor.getContent()
