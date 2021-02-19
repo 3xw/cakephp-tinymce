@@ -27,7 +27,7 @@ export default
   }),
   created()
   {
-    if(!window.vueTinymce) window.vueTinymce = {}
+    // regsiter
     window.vueTinymce[this.id] = this
   },
   mounted()

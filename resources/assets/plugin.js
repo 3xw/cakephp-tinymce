@@ -13,6 +13,7 @@ install = function(Vue, { store })
   // set vendor globals
   window.tinymce.baseURL = 'https://static.3xw.ch/tinymce/5.1'
   window.tinymce.suffix = '.min'
+  window.vueTinymce = {}
 
   // add components
   components.forEach(component => Vue.component(component.name, component))
