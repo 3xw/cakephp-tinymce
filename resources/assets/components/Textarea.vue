@@ -14,7 +14,8 @@ export default
   props: {
     field: String,
     init: Object,
-    entity:Object
+    entity:Object,
+    setFiled: Function
   },
   data: ()=>({
     editor: null,
@@ -69,7 +70,11 @@ export default
     },
     update(e)
     {
-      if(this.entity) this.entity[this.field] = this.editor.getContent()
+      if(this.entity)
+      {
+        this.entity[this.field] = this.editor.getContent()
+        this.setFiled(this.entity[this.field])
+      }
       window.tinymce.triggerSave()
       //console.log($('[name="'+this.name+'"]')[0].value);
     },
