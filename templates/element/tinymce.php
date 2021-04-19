@@ -3,7 +3,7 @@ use Cake\Core\Configure;
 
 // data
 $init = array_merge(Configure::read('Trois/Tinymce'), isset($init)? $init:[]);
-if(!empty($init['content_css'])) $init['content_css'][0] = $this->Url->build('/css/', true).$init['content_css'][0];
+if(!empty($init['content_css'])) $init['content_css'][0] = $this->Url->build('/css/'.$init['content_css'][0], ['fullBase' => true]);
 
 $attributes = array_merge(
   [
