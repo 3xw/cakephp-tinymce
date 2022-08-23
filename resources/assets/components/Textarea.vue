@@ -87,7 +87,7 @@ export default
         })
         return match
       })
-      args.content = args.content.replace(/<(div|style|meta|link|pclass|span|svg|path|pre|code).*?>/gi, '')
+      args.content = args.content.replace(/<(div|style|meta|link|pclass|span|svg|path|pre|code|text).*?>/gi, '')
     }
   }
 }
