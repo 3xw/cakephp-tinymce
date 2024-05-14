@@ -1,4 +1,4 @@
-<?
+<?php
 use Cake\Core\Configure;
 
 // dependencies
