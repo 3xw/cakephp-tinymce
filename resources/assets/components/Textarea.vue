@@ -1,4 +1,4 @@
-<template lang="html" >
+<template>
   <div class="input form-group textarea" :class="{required : init.required}">
     <label v-if="init.label">{{init.label}}</label>
     <div :id="name" :class="init.class">
