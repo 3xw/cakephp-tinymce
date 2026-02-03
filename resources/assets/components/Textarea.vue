@@ -58,7 +58,12 @@ export default
     },
     settings()
     {
-      return Object.assign({}, this.config, this.init, { paste_preprocess: this.pastePreprocess })
+      const settings = Object.assign({}, this.config, this.init, { paste_preprocess: this.pastePreprocess })
+      if (settings.attachment_settings) {
+        settings.plugins = 'attachment ' + (settings.plugins || '')
+        settings.toolbar = 'attachment | ' + (settings.toolbar || '')
+      }
+      return settings
     }
   },
   methods:
