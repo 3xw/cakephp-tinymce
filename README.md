@@ -1,5 +1,5 @@
 # cakephp-tinymce plugin for CakePHP 4.x
-Tinymce 4 for cakephp 4.x
+TinyMCE 5 for CakePHP 4.x
 
 ## Installation
 
@@ -21,16 +21,14 @@ At the end of config/boostrap file
 With your own configuration, create file config/tinymce.php ex:
 
 	<?php
-	use Cake\Routing\Router;
-
 	return [
 	  'Trois/Tinymce'  => [
-	    'height' => '500',
+	    'height' => 500,
 	    'language' => 'fr_FR',
-	    'language_url' => 'https://static.3xw.ch/tinymce/lang/fr_FR.js',
+	    'language_url' => 'https://static.3xw.ch/tinymce/5.1/lang/fr_FR.js',
 	    'menubar' => false,
-	    'plugins' => ['advlist autolink lists link charmap print preview searchreplace visualblocks code fullscreen emoticons insertdatetime table contextmenu paste  code help wordcount'],
-	    'toolbar'  => 'attachment | insert | undo redo | formatselect | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist | emoticons | code | removeformat ',
+	    'plugins' => 'advlist autolink lists link charmap print preview searchreplace visualblocks code fullscreen emoticons insertdatetime table paste code help wordcount',
+	    'toolbar' => 'undo redo | link | formatselect | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist | emoticons | code | removeformat',
 	    'block_formats' => 'Paragraphe=p;Titre 1=h1;Titre 2=h2;Titre 3=h3',
 	    'formats' => [
 	      'bold' => ['inline'  => 'strong'],
@@ -41,7 +39,11 @@ With your own configuration, create file config/tinymce.php ex:
 	    ],
 	    'valid_elements' => '*[style],p[style],strong,em,i,u,del,a[href|target],ul,ol,li[style],table,th,td[style],tr,img[src|style|class|alt|width|height]',
 	    'valid_styles' => ['*' => 'text-align,color'],
-	    'content_css' => []
+	    'content_css' => [],
+	    'theme' => 'silver',
+	    'mobile' => [
+	      'theme' => 'silver',
+	    ]
 	  ]
 	];
 
@@ -52,6 +54,7 @@ In your view files:
 	  'field' => 'content',
 	  'value' => $post->content,
 	  'init' => [ // optional
-	    'some_settings' => 'coucou',
-	    'toolbar'  => 'code | removeformat ', // override settings and add only code & removeformat
+	    'height' => 300,
+	    'toolbar' => 'undo redo | bold italic | code | removeformat', // override default toolbar
+	  ]
 	]);
